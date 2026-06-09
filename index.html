@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Kit Alfabetização</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1490125516489568');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1490125516489568&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script src="https://supermago.b-cdn.net/supermago.js?ver=20250224" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --yellow:#FFD93D;--orange:#FF6B35;--pink:#FF6B9D;--blue:#4ECDC4;--purple:#A855F7;--green:#06D6A0;
+  --dark:#1A1A2E;--mid:#16213E;--soft:#F8F7FF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Quicksand',sans-serif;background:#fff;color:#333;overflow-x:hidden;-webkit-text-size-adjust:100%}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes wiggle{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes bounceIn{0%{opacity:0;transform:scale(.5)}70%{transform:scale(1.1)}100%{opacity:1;transform:scale(1)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.anim-1{animation:fadeUp .7s ease both}
+.anim-2{animation:fadeUp .7s .15s ease both}
+.anim-3{animation:fadeUp .7s .3s ease both}
+.anim-4{animation:fadeUp .7s .45s ease both}
+.anim-5{animation:fadeUp .7s .6s ease both}
+
+/* ── TICKER ── */
+.ticker{background:var(--yellow);overflow:hidden;padding:10px 0;position:relative;z-index:10}
+.ticker-inner{display:flex;white-space:nowrap;animation:marquee 20s linear infinite}
+.ticker-item{font-family:'Baloo 2',sans-serif;font-weight:700;font-size:clamp(12px,3vw,14px);color:var(--dark);padding:0 28px;flex-shrink:0}
+
+/* ── HERO ── */
+.hero{background:var(--dark);padding:clamp(60px,10vw,100px) clamp(16px,5vw,40px) clamp(70px,10vw,110px);text-align:center;position:relative;overflow:hidden}
+.hero-bg-blobs{position:absolute;inset:0;pointer-events:none}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.2}
+.blob1{width:clamp(200px,50vw,500px);height:clamp(200px,50vw,500px);background:var(--purple);top:-100px;left:-100px}
+.blob2{width:clamp(180px,40vw,400px);height:clamp(180px,40vw,400px);background:var(--pink);bottom:-80px;right:-80px}
+.blob3{width:clamp(150px,30vw,300px);height:clamp(150px,30vw,300px);background:var(--blue);top:50%;left:50%;transform:translate(-50%,-50%)}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:2}
+.hero-badge{background:linear-gradient(135deg,var(--yellow),var(--orange));color:var(--dark);font-weight:800;font-size:clamp(10px,2.5vw,12px);padding:6px 20px;border-radius:50px;display:inline-block;margin-bottom:clamp(14px,3vw,22px);text-transform:uppercase;letter-spacing:2px}
+.hero h1{font-family:'Baloo 2',sans-serif;font-size:clamp(26px,6vw,52px);font-weight:800;color:#fff;line-height:1.2;margin-bottom:clamp(14px,3vw,20px)}
+.hero h1 em{font-style:normal;color:var(--yellow);position:relative}
+.hero h1 em::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:3px;background:var(--yellow);border-radius:4px;opacity:.5}
+.hero-sub{font-size:clamp(14px,3vw,18px);color:rgba(255,255,255,.75);line-height:1.7;margin:0 auto clamp(24px,5vw,36px);max-width:640px}
+.hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,3vw,28px);margin-bottom:clamp(20px,4vw,30px)}
+.stat-num{font-family:'Baloo 2',sans-serif;font-size:clamp(22px,5vw,30px);font-weight:800;color:var(--yellow)}
+.stat-label{font-size:clamp(9px,2vw,11px);color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:1px}
+.hero-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-top:clamp(10px,2vw,14px);font-size:clamp(11px,2.5vw,13px);color:rgba(255,255,255,.5)}
+
+/* ── STRIP ── */
+.strip{background:var(--soft);padding:clamp(32px,6vw,56px) clamp(16px,5vw,40px)}
+.strip-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:clamp(12px,3vw,22px)}
+.strip-item{display:flex;align-items:center;gap:14px;background:#fff;border-radius:20px;padding:clamp(14px,3vw,22px);box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.strip-icon{font-size:clamp(28px,5vw,36px);flex-shrink:0}
+.strip-item h4{font-family:'Baloo 2',sans-serif;font-size:clamp(13px,2.5vw,15px);font-weight:700;color:var(--dark);margin-bottom:3px}
+.strip-item p{font-size:clamp(11px,2vw,12px);color:#888;line-height:1.4}
+
+/* ── SHARED SECTION ── */
+.sec{padding:clamp(56px,8vw,90px) clamp(16px,5vw,40px)}
+.sec-center{text-align:center}
+.sec-label{font-size:clamp(10px,2vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--purple);margin-bottom:10px}
+.sec-title{font-family:'Baloo 2',sans-serif;font-size:clamp(22px,5vw,40px);font-weight:800;color:var(--dark);line-height:1.25;margin-bottom:12px}
+.sec-sub{font-size:clamp(14px,2.5vw,17px);color:#666;line-height:1.7;max-width:580px}
+.sec-center .sec-sub{margin:0 auto}
+
+/* ── VANTAGENS ── */
+.vant-layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(32px,5vw,56px);max-width:1100px;margin:0 auto;align-items:start}
+.vant-intro{display:flex;flex-direction:column;gap:0}
+.vant-intro .sec-sub{margin-bottom:clamp(20px,4vw,32px)}
+.btn-cta{background:linear-gradient(135deg,var(--orange),#FF4500);color:#fff;font-family:'Baloo 2',sans-serif;font-size:clamp(14px,3vw,18px);font-weight:700;padding:clamp(14px,3vw,18px) clamp(24px,5vw,40px);border:none;border-radius:60px;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 8px 32px rgba(255,107,53,.45);transition:.25s;position:relative;overflow:hidden;white-space:nowrap}
+.btn-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:.5s}
+.btn-cta:hover::before{transform:translateX(100%)}
+.btn-cta:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,107,53,.55)}
+.vant-cards{display:flex;flex-direction:column;gap:clamp(10px,2vw,16px)}
+.vant-item{display:flex;gap:14px;padding:clamp(16px,3vw,22px);border-radius:20px;background:var(--soft);transition:.3s;border:2px solid transparent}
+.vant-item:hover{border-color:var(--purple);background:#fff;box-shadow:0 8px 32px rgba(168,85,247,.1);transform:translateX(4px)}
+.vant-dot{width:clamp(40px,7vw,48px);height:clamp(40px,7vw,48px);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:clamp(20px,4vw,24px);flex-shrink:0}
+.d1{background:#EEF2FF}.d2{background:#ECFDF5}.d3{background:#FFF7ED}.d4{background:#FDF4FF}.d5{background:#FFFBEB}.d6{background:#F0FDF4}
+.vant-item h3{font-family:'Baloo 2',sans-serif;font-size:clamp(13px,2.5vw,15px);font-weight:700;color:var(--dark);margin-bottom:4px}
+.vant-item p{font-size:clamp(12px,2vw,13px);color:#777;line-height:1.5}
+
+/* ── TRILHA ── */
+.trilha-bg{background:var(--dark);position:relative;overflow:hidden}
+.trilha-bg::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.trilha-bg .sec-label{color:var(--yellow)}
+.trilha-bg .sec-title{color:#fff}
+.trilha-bg .sec-sub{color:rgba(255,255,255,.6)}
+.trilha-header{max-width:1100px;margin:0 auto clamp(32px,5vw,50px)}
+.etapas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(12px,2vw,20px);max-width:1100px;margin:0 auto}
+.etapa-card{border-radius:22px;overflow:hidden;cursor:pointer;transition:.3s;border:2px solid transparent}
+.etapa-card:hover{transform:translateY(-4px)}
+.e1c{background:rgba(255,107,157,.08);border-color:rgba(255,107,157,.25)}
+.e2c{background:rgba(78,205,196,.08);border-color:rgba(78,205,196,.25)}
+.e3c{background:rgba(255,217,61,.08);border-color:rgba(255,217,61,.25)}
+.e4c{background:rgba(168,85,247,.08);border-color:rgba(168,85,247,.25)}
+.etapa-card-header{display:flex;align-items:center;gap:14px;padding:clamp(16px,3vw,22px) clamp(16px,3vw,24px)}
+.etapa-num-big{font-family:'Baloo 2',sans-serif;font-size:clamp(36px,7vw,50px);font-weight:800;line-height:1;opacity:.25;flex-shrink:0}
+.e1c .etapa-num-big{color:#FF6B9D}
+.e2c .etapa-num-big{color:#4ECDC4}
+.e3c .etapa-num-big{color:#FFD93D}
+.e4c .etapa-num-big{color:#A855F7}
+.etapa-card-info h3{font-family:'Baloo 2',sans-serif;font-size:clamp(14px,3vw,17px);font-weight:800;color:#fff;margin-bottom:4px}
+.etapa-card-info p{font-size:clamp(11px,2vw,12px);color:rgba(255,255,255,.45)}
+.etapa-body-card{padding:0 clamp(16px,3vw,24px);max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s}
+.etapa-body-card.open{max-height:300px;padding:0 clamp(16px,3vw,24px) clamp(16px,3vw,22px)}
+.etapa-body-card ul{list-style:none}
+.etapa-body-card li{padding:7px 0;font-size:clamp(12px,2.5vw,14px);color:rgba(255,255,255,.72);display:flex;gap:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.etapa-body-card li:last-child{border:none}
+.etapa-body-card li::before{content:'→';opacity:.45}
+
+/* ── PARA QUEM ── */
+.paraquem-bg{background:linear-gradient(135deg,#FFF0F9,#F0F4FF)}
+.paraquem-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(32px,5vw,60px);align-items:start}
+.pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,14px)}
+.pq-card{border-radius:18px;padding:clamp(16px,3vw,22px) clamp(14px,3vw,18px);text-align:center;transition:.3s}
+.pq-card:hover{transform:translateY(-4px)}
+.pq-card:nth-child(1){background:#FFF0F6;grid-column:1/3}
+.pq-card:nth-child(2){background:#EEF2FF}
+.pq-card:nth-child(3){background:#F0FDF4}
+.pq-card:nth-child(4){background:#FFFBEB;grid-column:1/3}
+.pq-card:nth-child(5){background:#F5F3FF;grid-column:1/3}
+.pq-emoji{font-size:clamp(28px,6vw,40px);margin-bottom:8px}
+.pq-card p{font-size:clamp(12px,2.5vw,14px);font-weight:600;color:var(--dark);line-height:1.5}
+
+/* ── BÔNUS ── */
+.bonus-bg{background:var(--mid);position:relative;overflow:hidden}
+.bonus-bg::after{content:'🎁';font-size:clamp(120px,30vw,300px);position:absolute;right:-30px;bottom:-40px;opacity:.04;pointer-events:none}
+.bonus-bg .sec-label{color:var(--yellow)}
+.bonus-bg .sec-title{color:#fff}
+.bonus-bg .sec-sub{color:rgba(255,255,255,.6)}
+.bonus-header{max-width:1100px;margin:0 auto clamp(32px,5vw,50px)}
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:clamp(14px,3vw,24px);max-width:1100px;margin:0 auto}
+.b-card{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:26px;padding:clamp(24px,4vw,36px) clamp(18px,4vw,28px);position:relative;overflow:hidden;transition:.3s}
+.b-card:hover{border-color:var(--yellow);background:rgba(255,217,61,.05);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.b-num{font-family:'Baloo 2',sans-serif;font-size:clamp(48px,10vw,64px);font-weight:800;color:rgba(255,255,255,.05);position:absolute;top:8px;right:16px;line-height:1}
+.b-emoji{font-size:clamp(36px,7vw,48px);margin-bottom:14px;display:block;animation:wiggle 3s ease-in-out infinite}
+.b-card h3{font-family:'Baloo 2',sans-serif;font-size:clamp(14px,3vw,17px);font-weight:800;color:#fff;margin-bottom:10px}
+.b-card p{font-size:clamp(12px,2vw,13px);color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:16px}
+.b-valor{background:var(--yellow);color:var(--dark);font-weight:800;font-size:clamp(11px,2vw,12px);padding:5px 16px;border-radius:50px;display:inline-block}
+
+/* ── GARANTIA ── */
+.garantia-bg{background:#fff;padding:clamp(56px,8vw,90px) clamp(16px,5vw,40px);position:relative}
+.garantia-inner{max-width:760px;margin:0 auto;background:linear-gradient(135deg,#ECFDF5,#D1FAE5);border-radius:clamp(20px,4vw,32px);padding:clamp(36px,6vw,60px) clamp(24px,6vw,56px);text-align:center;position:relative;border:3px solid #6EE7B7}
+.garantia-shield{font-size:clamp(56px,12vw,80px);margin-bottom:16px;animation:bounceIn .8s ease both;display:block}
+.garantia-inner h2{font-family:'Baloo 2',sans-serif;font-size:clamp(20px,5vw,36px);font-weight:800;color:#064E3B;margin-bottom:14px}
+.garantia-inner p{font-size:clamp(14px,2.5vw,17px);color:#065F46;line-height:1.8;max-width:580px;margin:0 auto}
+.garantia-inner strong{color:#047857}
+
+/* ── OFERTA ── */
+.oferta-bg{background:linear-gradient(160deg,var(--dark),#0D0D1A);position:relative;overflow:hidden}
+.oferta-bg::before{content:'';position:absolute;width:clamp(300px,80vw,800px);height:clamp(300px,80vw,800px);border-radius:50%;background:radial-gradient(circle,rgba(255,107,53,.13),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.oferta-bg .sec-label{color:var(--yellow)}
+.oferta-bg .sec-title{color:#fff}
+.oferta-bg .sec-sub{color:rgba(255,255,255,.6)}
+.oferta-header{max-width:900px;margin:0 auto clamp(32px,5vw,50px);text-align:center}
+.oferta-box{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.1);border-radius:clamp(20px,4vw,32px);padding:clamp(28px,5vw,50px) clamp(18px,5vw,44px);max-width:680px;margin:0 auto;position:relative}
+.oferta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--yellow));border-radius:32px 32px 0 0}
+.oferta-list{list-style:none;margin-bottom:clamp(24px,4vw,36px)}
+.oferta-list li{padding:clamp(8px,2vw,12px) 0;font-size:clamp(13px,2.5vw,15px);color:rgba(255,255,255,.9);display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.07);font-weight:600;flex-wrap:wrap}
+.oferta-list li:last-child{border:none}
+.oferta-list li .tag{background:var(--yellow);color:var(--dark);font-size:clamp(9px,1.5vw,10px);font-weight:800;padding:2px 8px;border-radius:50px;margin-left:auto;text-transform:uppercase;white-space:nowrap}
+.price-block{text-align:center;margin-bottom:clamp(24px,4vw,36px)}
+.price-de{color:rgba(255,255,255,.4);font-size:clamp(13px,2.5vw,16px);text-decoration:line-through;margin-bottom:4px}
+.price-por{font-size:clamp(12px,2vw,14px);color:rgba(255,255,255,.55);margin-bottom:6px}
+.price-big{font-family:'Baloo 2',sans-serif;font-size:clamp(52px,14vw,80px);font-weight:800;color:var(--yellow);line-height:1;margin-bottom:6px}
+.price-sub{font-size:clamp(11px,2vw,13px);color:rgba(255,255,255,.45)}
+.btn-buy{background:linear-gradient(135deg,var(--green),#059669);color:#fff;font-family:'Baloo 2',sans-serif;font-size:clamp(15px,3.5vw,20px);font-weight:700;padding:clamp(16px,3vw,22px) clamp(20px,5vw,50px);border:none;border-radius:60px;cursor:pointer;text-decoration:none;display:block;width:100%;box-shadow:0 8px 40px rgba(6,214,160,.3);transition:.25s;text-align:center;text-transform:uppercase;letter-spacing:1px;position:relative;overflow:hidden}
+.btn-buy::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:translateX(-100%);animation:shimmer 2s infinite}
+.btn-buy:hover{transform:translateY(-3px);box-shadow:0 12px 50px rgba(6,214,160,.45)}
+.pay-icons{text-align:center;margin-top:14px;font-size:clamp(11px,2vw,13px);color:rgba(255,255,255,.4);display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px}
+
+/* ── FAQ ── */
+.faq-bg{background:var(--soft)}
+.faq-inner{max-width:740px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:clamp(28px,5vw,50px)}
+.faq-item{background:#fff;border-radius:18px;margin-bottom:10px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.06);transition:.3s;border:2px solid transparent}
+.faq-item.active{border-color:var(--purple)}
+.faq-q{padding:clamp(14px,3vw,20px) clamp(16px,3vw,24px);font-family:'Baloo 2',sans-serif;font-size:clamp(14px,2.5vw,16px);font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--dark);line-height:1.4}
+.faq-q:hover{color:var(--purple)}
+.faq-icon{width:clamp(24px,5vw,28px);height:clamp(24px,5vw,28px);border-radius:50%;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:clamp(14px,3vw,16px);transition:.3s;flex-shrink:0}
+.faq-item.active .faq-icon{background:var(--purple);color:#fff;transform:rotate(45deg)}
+.faq-a{font-size:clamp(13px,2.5vw,15px);color:#666;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s}
+.faq-a.open{max-height:200px;padding:0 clamp(16px,3vw,24px) clamp(14px,3vw,20px)}
+
+
+
+/* ── FOOTER ── */
+footer{background:var(--dark);color:rgba(255,255,255,.3);text-align:center;padding:clamp(20px,4vw,30px) 20px clamp(72px,14vw,90px);font-size:clamp(11px,2vw,12px)}
+footer p+p{margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner" id="ticker"></div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-badge anim-1">📚 Material 100% digital</div>
+    <h1 class="anim-2">Seu filho lendo e escrevendo em casa — <em>20 minutos por dia</em>, sem você precisar ser professora</h1>
+    <p class="hero-sub anim-3">Mais de 1.000 páginas de atividades prontas para imprimir, numa trilha do zero ao texto que qualquer pai ou mãe consegue aplicar.</p>
+    <div class="hero-stats anim-4">
+      <div class="stat"><div class="stat-num">+1.000</div><div class="stat-label">páginas</div></div>
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">etapas</div></div>
+      <div class="stat"><div class="stat-num">20min</div><div class="stat-label">por dia</div></div>
+      <div class="stat"><div class="stat-num">R$19,90</div><div class="stat-label">único</div></div>
+    </div>
+    <div class="anim-5 hero-trust">🔒 Pagamento seguro &nbsp;·&nbsp; 💳 Cartão, Pix ou Boleto &nbsp;·&nbsp; ✅ Acesso imediato</div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-item"><div class="strip-icon">🖨️</div><div><h4>Imprima infinitas vezes</h4><p>Pagamento único — use com quantos filhos quiser</p></div></div>
+    <div class="strip-item"><div class="strip-icon">📵</div><div><h4>Tira da tela sem briga</h4><p>Atividade que a criança pede para fazer</p></div></div>
+    <div class="strip-item"><div class="strip-icon">💰</div><div><h4>Menos que 1 mês de reforço</h4><p>Reforço: R$300/mês. Aqui: R$19,90 uma vez</p></div></div>
+  </div>
+</div>
+
+<!-- VANTAGENS -->
+<section class="sec" style="background:#fff">
+  <div class="vant-layout">
+    <div class="vant-intro">
+      <div class="sec-label">Por que funciona</div>
+      <h2 class="sec-title">Tudo que você precisava num só lugar</h2>
+      <p class="sec-sub" style="margin-bottom:clamp(20px,4vw,32px)">Sem enrolação, sem método complicado. Atividades que funcionam — na ordem certa, no tempo certo.</p>
+      <a href="#oferta" class="btn-cta" style="align-self:flex-start">Ver oferta →</a>
+    </div>
+    <div class="vant-cards">
+      <div class="vant-item"><div class="vant-dot d1">🗺️</div><div><h3>Trilha pronta, do zero ao texto</h3><p>Da vogal à leitura fluente já organizado — sem adivinhar a ordem.</p></div></div>
+      <div class="vant-item"><div class="vant-dot d2">⏰</div><div><h3>20 minutos por dia bastam</h3><p>Cabe na rotina real de quem trabalha, sem virar mais uma obrigação.</p></div></div>
+      <div class="vant-item"><div class="vant-dot d3">🖨️</div><div><h3>Imprime quantas vezes quiser</h3><p>Comprou uma vez, usa com 1, 2, 3 filhos — por anos, sem custo extra.</p></div></div>
+      <div class="vant-item"><div class="vant-dot d4">🏫</div><div><h3>Funciona como reforço ou base</h3><p>Serve pra acelerar quem está na escola ou alfabetizar do zero.</p></div></div>
+      <div class="vant-item"><div class="vant-dot d5">💸</div><div><h3>Custa menos que 1 mês de reforço</h3><p>Reforço escolar: R$300+/mês. Aqui: R$19,90 pagamento único.</p></div></div>
+      <div class="vant-item"><div class="vant-dot d6">📵</div><div><h3>Tira da tela sem imposição</h3><p>Atividade lúdica que ela pede pra fazer — sem você precisar forçar.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRILHA -->
+<section class="sec trilha-bg" id="trilha">
+  <div class="trilha-header">
+    <div class="sec-label">Conteúdo</div>
+    <h2 class="sec-title">O caminho completo da alfabetização</h2>
+    <p class="sec-sub">4 etapas em sequência lógica — toque para explorar cada uma</p>
+  </div>
+  <div class="etapas">
+    <div class="etapa-card e1c" onclick="toggleEtapa(this)">
+      <div class="etapa-card-header"><div class="etapa-num-big">01</div><div class="etapa-card-info"><h3>✏️ Primeiros Traços</h3><p>Coordenação motora e reconhecimento</p></div></div>
+      <div class="etapa-body-card"><ul><li>Coordenação motora e pontilhados</li><li>Vogais com figuras e repetição</li><li>Alfabeto em bastão e cursiva</li></ul></div>
+    </div>
+    <div class="etapa-card e2c" onclick="toggleEtapa(this)">
+      <div class="etapa-card-header"><div class="etapa-num-big">02</div><div class="etapa-card-info"><h3>🔤 Primeiras Palavras</h3><p>Sílabas e famílias silábicas</p></div></div>
+      <div class="etapa-body-card"><ul><li>Sílabas simples e famílias silábicas</li><li>Fichas de leitura com animais e objetos</li><li>Caligrafia guiada</li></ul></div>
+    </div>
+    <div class="etapa-card e3c" onclick="toggleEtapa(this)">
+      <div class="etapa-card-header"><div class="etapa-num-big">03</div><div class="etapa-card-info"><h3>📖 Lendo de Verdade</h3><p>Textos, fábulas e fluência</p></div></div>
+      <div class="etapa-body-card"><ul><li>Sílabas complexas</li><li>Fichas de leitura com textos curtos</li><li>Pequenas fábulas para leitura</li></ul></div>
+    </div>
+    <div class="etapa-card e4c" onclick="toggleEtapa(this)">
+      <div class="etapa-card-header"><div class="etapa-num-big">04</div><div class="etapa-card-info"><h3>🌟 Compreendendo e Além</h3><p>Interpretação e matemática</p></div></div>
+      <div class="etapa-body-card"><ul><li>Interpretação de textos</li><li>Caderno das cores e folclore brasileiro</li><li>Introdução à matemática e às quatro operações</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="sec paraquem-bg">
+  <div class="paraquem-layout">
+    <div>
+      <div class="sec-label">Identificação</div>
+      <h2 class="sec-title">Esse material é pra você se...</h2>
+      <p class="sec-sub">Se você se identificar com pelo menos um cenário, o kit foi feito exatamente pra você.</p>
+    </div>
+    <div class="pq-grid">
+      <div class="pq-card"><div class="pq-emoji">👶</div><p>Seu filho está em fase de alfabetização e você não sabe por onde começar</p></div>
+      <div class="pq-card"><div class="pq-emoji">😟</div><p>A criança está ficando para trás dos coleguinhas</p></div>
+      <div class="pq-card"><div class="pq-emoji">📵</div><p>Você quer reduzir tempo de tela com algo que realmente ensine</p></div>
+      <div class="pq-card"><div class="pq-emoji">👩‍🏫</div><p>Você é professora e quer um banco de atividades pronto pra sala</p></div>
+      <div class="pq-card"><div class="pq-emoji">💸</div><p>Você quer alternativa ao reforço caro sem abrir mão da qualidade</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="sec bonus-bg">
+  <div class="bonus-header">
+    <div class="sec-label">Bônus exclusivos</div>
+    <h2 class="sec-title">E ainda tem mais — grátis</h2>
+    <p class="sec-sub">3 materiais extras incluídos pra você aplicar com ainda mais segurança</p>
+  </div>
+  <div class="bonus-grid">
+    <div class="b-card"><div class="b-num">01</div><span class="b-emoji">📅</span><h3>Guia da Rotina de 20 Minutos</h3><p>Cronograma semanal pronto pra colar na geladeira. Sem stress, só seguir.</p><span class="b-valor">Valor: R$37</span></div>
+    <div class="b-card"><div class="b-num">02</div><span class="b-emoji">🎮</span><h3>Caderno de Atividades Lúdicas</h3><p>Jogos, caça-palavras e dinâmicas que reforçam o aprendizado brincando.</p><span class="b-valor">Valor: R$27</span></div>
+    <div class="b-card"><div class="b-num">03</div><span class="b-emoji">💡</span><h3>Guia para Pais</h3><p>Os erros mais comuns na alfabetização e como evitá-los com segurança.</p><span class="b-valor">Valor: R$27</span></div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<div class="garantia-bg">
+  <div class="garantia-inner">
+    <span class="garantia-shield">🛡️</span>
+    <h2>7 dias de risco zero — o risco é todo nosso</h2>
+    <p>Use o material por <strong>7 dias completos</strong>. Se achar que não é pra você, por qualquer motivo, basta um e-mail e devolvemos <strong>100% do valor</strong>. Sem perguntas, sem burocracia.<br><br>Ou seu filho começa a evoluir, ou você não paga nada.</p>
+  </div>
+</div>
+
+<!-- OFERTA -->
+<section class="sec oferta-bg" id="oferta">
+  <div class="oferta-header">
+    <div class="sec-label">Oferta especial</div>
+    <h2 class="sec-title">Tudo que você leva hoje</h2>
+    <p class="sec-sub">Pagamento único — use pra sempre, com quantos filhos quiser</p>
+  </div>
+  <div class="oferta-box">
+    <ul class="oferta-list">
+      <li>✅ +1.000 páginas de atividades em trilha (4 etapas)<span class="tag">Principal</span></li>
+      <li>✅ PDF para imprimir infinitas vezes</li>
+      <li>🎁 Bônus 1: Guia da Rotina de 20 Minutos<span class="tag" style="background:#A855F7;color:#fff">Bônus</span></li>
+      <li>🎁 Bônus 2: Caderno de Atividades Lúdicas<span class="tag" style="background:#A855F7;color:#fff">Bônus</span></li>
+      <li>🎁 Bônus 3: Guia para Pais<span class="tag" style="background:#A855F7;color:#fff">Bônus</span></li>
+    </ul>
+    <div class="price-block">
+      <div class="price-de">Valor total: R$165</div>
+      <div class="price-por">De R$97 — hoje por apenas:</div>
+      <div class="price-big">R$19,90</div>
+      <div class="price-sub">pagamento único · acesso imediato no e-mail</div>
+    </div>
+    <a href="https://pay.kiwify.com.br/4qirzTv" class="btn-buy" target="_blank" rel="noopener">👉 QUERO ALFABETIZAR MEU FILHO EM CASA</a>
+    <div class="pay-icons"><span>💳 Cartão</span><span>·</span><span>📱 Pix</span><span>·</span><span>📄 Boleto</span><span>·</span><span>🔒 Compra 100% segura</span></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec faq-bg">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="sec-label" style="text-align:center">Dúvidas</div>
+      <h2 class="sec-title" style="text-align:center">Perguntas frequentes</h2>
+    </div>
+    <div id="faq-list"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 · Todos os direitos reservados · Conteúdo 100% digital</p>
+  <p>Política de privacidade &nbsp;·&nbsp; Termos de uso</p>
+</footer>
+
+
+
+<script>
+// Ticker
+const msgs=['📚 +1.000 páginas prontas para imprimir','✏️ Do zero ao texto em 4 etapas','⏰ Só 20 minutos por dia','🎁 3 bônus exclusivos incluídos','💰 Menos que 1 mês de reforço escolar','🛡️ 7 dias de garantia total','📱 Pix, Cartão ou Boleto','✅ Acesso imediato após o pagamento'];
+const t=document.getElementById('ticker');
+t.innerHTML=[...msgs,...msgs].map(m=>`<span class="ticker-item">${m} &nbsp;★&nbsp; </span>`).join('');
+
+// FAQ
+const faqs=[
+  {q:'Como recebo o material?',a:'Acesso imediato. Após a compra, o conteúdo cai no seu e-mail organizado em arquivos separados por etapa.'},
+  {q:'Qual a idade indicada?',a:'De 2 a 10 anos. Serve tanto para iniciar a alfabetização quanto para reforçar quem já está na escola.'},
+  {q:'Preciso ter experiência com ensino?',a:'Não. A trilha já vem na ordem certa e os bônus te mostram exatamente como conduzir cada sessão.'},
+  {q:'É material físico?',a:'Não, é 100% digital em PDF. Você imprime em casa ou numa gráfica, quantas vezes quiser.'},
+  {q:'E se eu não gostar?',a:'7 dias de garantia total. Devolvemos 100% do valor com um único e-mail — sem perguntas, sem burocracia.'},
+];
+document.getElementById('faq-list').innerHTML=faqs.map((f,i)=>`
+<div class="faq-item" id="fi${i}">
+  <div class="faq-q" onclick="toggleFaq(${i})">${f.q}<div class="faq-icon">＋</div></div>
+  <div class="faq-a" id="fa${i}">${f.a}</div>
+</div>`).join('');
+
+function toggleFaq(i){
+  const item=document.getElementById('fi'+i),a=document.getElementById('fa'+i),icon=item.querySelector('.faq-icon');
+  const open=a.classList.toggle('open');
+  item.classList.toggle('active',open);
+  icon.textContent=open?'✕':'＋';
+}
+function toggleEtapa(el){el.querySelector('.etapa-body-card').classList.toggle('open')}
+
+// CTA bar
+
+</script>
+</body>
+</html>
